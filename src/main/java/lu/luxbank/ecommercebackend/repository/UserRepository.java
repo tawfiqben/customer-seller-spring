@@ -1,0 +1,16 @@
+package lu.luxbank.ecommercebackend.repository;
+
+import lu.luxbank.ecommercebackend.entity.User;
+import lu.luxbank.ecommercebackend.enums.Role;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    User findByUsername(String username);
+
+    List<User> findByRole(Role role);
+}
